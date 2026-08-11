@@ -29,3 +29,34 @@ filterButtons.forEach((button) => {
 
     });
 });
+
+const prayerForm = document.querySelector("#prayer-form");
+const prayerMessage = document.querySelector("#prayer-message");
+
+prayerForm.addEventListener("submit", (event) => {
+
+    event.preventDefault();
+
+    const name = document.querySelector("#prayer-name").value.trim();
+    const email = document.querySelector("#prayer-email").value.trim();
+    const request = document.querySelector("#prayer-request").value.trim();
+
+    if (!name || !email || !request) {
+        prayerMessage.textContent =
+            "Please complete all fields before submitting.";
+
+        return;
+    }
+
+    if (!email.includes("@")) {
+        prayerMessage.textContent =
+            "Please enter a valid email address.";
+
+        return;
+    }
+
+    prayerMessage.textContent =
+        "Your prayer request has been submitted.";
+
+    prayerForm.reset();
+});
