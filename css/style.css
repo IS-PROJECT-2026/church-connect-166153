@@ -244,6 +244,20 @@ nav a {
     font-weight: 700;
 }
 
+.form-message.success {
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    background: #e8f5e9;
+}
+
+.form-message.error {
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    background: #ffebee;
+}
+
 section {
     max-width: 1100px;
     margin: auto;
