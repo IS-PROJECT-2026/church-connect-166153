@@ -20,6 +20,42 @@ header {
     border-bottom: 1px solid #e5e5e5;
 }
 
+.menu-toggle {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+@media (max-width: 650px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        position: relative;
+    }
+
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        padding: 1rem;
+        background: white;
+        border-top: 1px solid #ddd;
+    }
+
+    nav ul.open {
+        display: flex;
+    }
+
+}
+
 nav {
     max-width: 1200px;
     margin: auto;
