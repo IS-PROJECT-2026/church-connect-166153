@@ -258,6 +258,19 @@ nav a {
     background: #ffebee;
 }
 
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.contact-grid div {
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
 section {
     max-width: 1100px;
     margin: auto;
