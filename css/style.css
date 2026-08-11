@@ -136,6 +136,25 @@ nav a {
     margin-bottom: 1rem;
 }
 
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    padding: 2rem;
+    border-radius: 10px;
+    background: #f4f0e8;
+}
+
+.service-card p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+}
+
 section {
     max-width: 1100px;
     margin: auto;
