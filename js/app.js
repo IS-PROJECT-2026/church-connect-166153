@@ -1,3 +1,17 @@
+const menuToggle = document.querySelector("#menu-toggle");
+const navMenu = document.querySelector("#nav-menu");
+
+menuToggle.addEventListener("click", () => {
+
+    const isOpen = navMenu.classList.toggle("open");
+
+    menuToggle.setAttribute(
+        "aria-expanded",
+        isOpen
+    );
+
+});
+
 const filterButtons = document.querySelectorAll(".filter-button");
 const eventCards = document.querySelectorAll(".event-card");
 
