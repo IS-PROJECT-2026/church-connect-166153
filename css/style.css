@@ -161,6 +161,26 @@ nav a {
     margin-top: 2rem;
 }
 
+.event-filters {
+    display: flex;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+}
+
+.filter-button {
+    padding: 0.6rem 1rem;
+    border: 1px solid #ccc;
+    background: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filter-button.active {
+    background: #222;
+    color: white;
+}
+
 .event-card {
     display: flex;
     gap: 1.5rem;
