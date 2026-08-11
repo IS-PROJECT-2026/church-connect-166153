@@ -42,21 +42,27 @@ prayerForm.addEventListener("submit", (event) => {
     const request = document.querySelector("#prayer-request").value.trim();
 
     if (!name || !email || !request) {
-        prayerMessage.textContent =
-            "Please complete all fields before submitting.";
+    prayerMessage.textContent =
+        "Please complete all fields before submitting.";
 
-        return;
-    }
+    prayerMessage.className = "form-message error";
+
+    return;
+}
 
     if (!email.includes("@")) {
         prayerMessage.textContent =
             "Please enter a valid email address.";
 
+        prayerMessage.className = "form-message error";
+
         return;
     }
 
     prayerMessage.textContent =
-        "Your prayer request has been submitted.";
+        "Thank you. Your prayer request has been received.";
+
+    prayerMessage.className = "form-message success";
 
     prayerForm.reset();
 });
