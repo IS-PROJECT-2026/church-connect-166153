@@ -24,6 +24,8 @@ Church Connect is a web application designed to help churches manage member enga
 - GitHub Pages
 
 ## Live Website
+Visit Church Connect at:
+https://is-project-2026.github.io/church-connect-166153/
 
 
 
