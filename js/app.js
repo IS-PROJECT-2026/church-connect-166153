@@ -1,16 +1,33 @@
 const menuToggle = document.querySelector("#menu-toggle");
 const navMenu = document.querySelector("#nav-menu");
 
-menuToggle.addEventListener("click", () => {
+if (menuToggle && navMenu) {
+    menuToggle.addEventListener("click", () => {
+        const isOpen = navMenu.classList.toggle("open");
 
-    const isOpen = navMenu.classList.toggle("open");
+        menuToggle.setAttribute(
+            "aria-expanded",
+            String(isOpen)
+        );
 
-    menuToggle.setAttribute(
-        "aria-expanded",
-        isOpen
-    );
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation menu" : "Open navigation menu"
+        );
+    });
 
-});
+    navMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+            navMenu.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
+        });
+    });
+}
+
 
 const filterButtons = document.querySelectorAll(".filter-button");
 const eventCards = document.querySelectorAll(".event-card");
@@ -38,45 +55,46 @@ filterButtons.forEach((button) => {
             } else {
                 card.style.display = "none";
             }
-
         });
-
     });
 });
+
 
 const prayerForm = document.querySelector("#prayer-form");
 const prayerMessage = document.querySelector("#prayer-message");
 
-prayerForm.addEventListener("submit", (event) => {
+if (prayerForm && prayerMessage) {
+    prayerForm.addEventListener("submit", (event) => {
 
-    event.preventDefault();
+        event.preventDefault();
 
-    const name = document.querySelector("#prayer-name").value.trim();
-    const email = document.querySelector("#prayer-email").value.trim();
-    const request = document.querySelector("#prayer-request").value.trim();
+        const name = document.querySelector("#prayer-name").value.trim();
+        const email = document.querySelector("#prayer-email").value.trim();
+        const request = document.querySelector("#prayer-request").value.trim();
 
-    if (!name || !email || !request) {
-    prayerMessage.textContent =
-        "Please complete all fields before submitting.";
+        if (!name || !email || !request) {
+            prayerMessage.textContent =
+                "Please complete all fields before submitting.";
 
-    prayerMessage.className = "form-message error";
+            prayerMessage.className = "form-message error";
 
-    return;
-}
+            return;
+        }
 
-    if (!email.includes("@")) {
+        if (!email.includes("@")) {
+            prayerMessage.textContent =
+                "Please enter a valid email address.";
+
+            prayerMessage.className = "form-message error";
+
+            return;
+        }
+
         prayerMessage.textContent =
-            "Please enter a valid email address.";
+            "Thank you. Your prayer request has been received.";
 
-        prayerMessage.className = "form-message error";
+        prayerMessage.className = "form-message success";
 
-        return;
-    }
-
-    prayerMessage.textContent =
-        "Thank you. Your prayer request has been received.";
-
-    prayerMessage.className = "form-message success";
-
-    prayerForm.reset();
-});
+        prayerForm.reset();
+    });
+}
