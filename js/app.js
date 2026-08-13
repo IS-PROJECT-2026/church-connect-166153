@@ -83,7 +83,7 @@ if (prayerForm && prayerMessage) {
 
         if (!email.includes("@")) {
             prayerMessage.textContent =
-                "Please enter a valid email address.";
+                "Invalid! Please enter a valid email address.";
 
             prayerMessage.className = "form-message error";
 
@@ -91,7 +91,7 @@ if (prayerForm && prayerMessage) {
         }
 
         prayerMessage.textContent =
-            "Thank you. Your prayer request has been received.";
+            "Thank you. Your prayer request has been received. God bless you!";
 
         prayerMessage.className = "form-message success";
 
