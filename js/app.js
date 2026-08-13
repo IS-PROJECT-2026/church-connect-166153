@@ -74,7 +74,7 @@ if (prayerForm && prayerMessage) {
 
         if (!name || !email || !request) {
             prayerMessage.textContent =
-                "Please complete all fields before submitting.";
+                "For personalised attention, please provide your name, email, and prayer request.";
 
             prayerMessage.className = "form-message error";
 
@@ -83,7 +83,7 @@ if (prayerForm && prayerMessage) {
 
         if (!email.includes("@")) {
             prayerMessage.textContent =
-                "Invalid! Please enter a valid email address.";
+                "Please enter a valid email address.";
 
             prayerMessage.className = "form-message error";
 
